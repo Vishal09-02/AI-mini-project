@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <title>MedExpert AI — Intelligent Medical Reasoning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">✚</span>
+        <span>medexpert<span class="brand-ai">.ai</span></span>
+      </a>
+
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav">
+        <a class="nav-item active" href="#dashboard"><span>◈</span> Overview <span class="nav-dot"></span></a>
+        <a class="nav-item" href="#symptomSection"><span>⌕</span> Symptom analysis</a>
+        <a class="nav-item" href="#methodSection"><span>⟁</span> Inference engine</a>
+      </nav>
+
+      <div class="side-label">AI METHODS</div>
+      <div class="method-link">
+        <span class="method-symbol forward-symbol">↗</span>
+        <div><strong>Forward chaining</strong><small>Data-driven reasoning</small></div>
+      </div>
+      <div class="method-link">
+        <span class="method-symbol backward-symbol">↙</span>
+        <div><strong>Backward chaining</strong><small>Goal-driven reasoning</small></div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="status-indicator"><span></span> Rule engine available</div>
+        <div class="sidebar-note">AI MINI PROJECT<br>Rule-Based Expert System</div>
+        <div class="sidebar-version">EDUCATIONAL BUILD · V1.0</div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb">Workspace <span>/</span> Medical intelligence</div>
+          <div class="topbar-title">Diagnostic workspace</div>
+        </div>
+        <div class="topbar-right">
+          <span class="top-chip"><span class="live-dot"></span> SYSTEM ONLINE</span>
+          <div class="avatar">AI</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome-banner">
+          <div class="banner-content">
+            <div class="eyebrow"><span class="sparkle">✦</span> INTELLIGENT REASONING PLATFORM</div>
+            <h1>Understand the signals.<br><span>Explore the possibilities.</span></h1>
+            <p>An explainable rule-based AI system that demonstrates how symptoms become facts and facts activate logical rules.</p>
+            <a href="#symptomSection" class="banner-cta">Start analysis <span>↗</span></a>
+          </div>
+          <div class="banner-visual" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+            <div class="medical-core">
+              <span>✚</span>
+              <div class="core-ring"></div>
+            </div>
+            <span class="float-node node-one">IF</span>
+            <span class="float-node node-two">THEN</span>
+            <span class="float-node node-three">AI</span>
+            <span class="float-node node-four">↗</span>
+          </div>
+          <div class="banner-bottom"><span></span> TRANSPARENT RULE-BASED INTELLIGENCE</div>
+        </section>
+
+        <div class="disclaimer">
+          <span class="disclaimer-icon">!</span>
+          <div><strong>Educational use only</strong><p>This prototype demonstrates AI reasoning, not clinical diagnosis. It is not medically validated and must not be used to make healthcare decisions.</p></div>
+        </div>
+
+        <section class="metrics">
+          <article class="metric-card">
+            <div class="metric-top"><span>KNOWLEDGE BASE</span><span class="metric-icon cyan">⌘</span></div>
+            <div class="metric-value">05 <small>rules</small></div>
+            <div class="metric-caption">Illustrative IF–THEN rules</div>
+            <div class="metric-line"><span style="width:72%"></span></div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>INPUT FEATURES</span><span class="metric-icon violet">⌕</span></div>
+            <div class="metric-value">17 <small>symptoms</small></div>
+            <div class="metric-caption">Selectable input facts</div>
+            <div class="metric-line violet-line"><span style="width:86%"></span></div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>INFERENCE METHODS</span><span class="metric-icon green">⟁</span></div>
+            <div class="metric-value">02 <small>engines</small></div>
+            <div class="metric-caption">Forward + backward chaining</div>
+            <div class="metric-line green-line"><span style="width:100%"></span></div>
+          </article>
+        </section>
+
+        <section class="analysis-layout">
+          <div class="panel input-panel" id="symptomSection">
+            <div class="panel-header">
+              <div class="panel-heading">
+                <div class="panel-kicker">01 / PATIENT INPUT</div>
+                <h2>Symptom assessment</h2>
+                <p>Select all symptoms to evaluate the demonstration rules.</p>
+              </div>
+              <span class="step-badge">INPUT</span>
+            </div>
+
+            <div class="selection-toolbar">
+              <span>AVAILABLE SYMPTOMS</span>
+              <span id="symptomCount" class="count">0 selected</span>
+            </div>
+
+            <div id="symptomList" class="symptom-list"></div>
+
+            <div class="form-divider"></div>
+
+            <label class="field-label" for="method">Inference strategy</label>
+            <div class="select-wrap">
+              <span class="select-icon">⟁</span>
+              <select id="method" class="field">
+                <option value="forward">Forward Chaining — Data-driven</option>
+                <option value="backward">Backward Chaining — Goal-driven</option>
+              </select>
+              <span class="select-chevron">⌄</span>
+            </div>
+
+            <div id="targetWrap" hidden>
+              <label class="field-label" for="target">Hypothesis to test</label>
+              <div class="select-wrap">
+                <select id="target" class="field">
+                  <option value="cold">Common cold pattern</option>
+                  <option value="flu">Flu-like illness pattern</option>
+                  <option value="allergy">Allergy pattern</option>
+                  <option value="migraine">Migraine-like pattern</option>
+                  <option value="stomach">Gastrointestinal illness pattern</option>
+                </select>
+                <span class="select-chevron">⌄</span>
+              </div>
+              <p class="field-help">Backward chaining begins with this hypothesis and checks its required facts.</p>
+            </div>
+
+            <button id="analyzeBtn" class="primary-btn"><span>Run inference engine</span><span class="btn-arrow">↗</span></button>
+            <button id="resetBtn" class="reset-btn">↺ &nbsp; Reset assessment</button>
+            <div class="input-footnote"><span>▣</span> Your selections are processed locally in this browser.</div>
+          </div>
+
+          <div class="panel output-panel">
+            <div class="panel-header">
+              <div class="panel-heading">
+                <div class="panel-kicker">02 / AI OUTPUT</div>
+                <h2>Reasoning analysis</h2>
+                <p>Follow the rules activated by the inference engine.</p>
+              </div>
+              <span id="status" class="status-pill">● READY</span>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+              <div class="empty-art">
+                <div class="empty-circle circle-one"></div>
+                <div class="empty-circle circle-two"></div>
+                <div class="empty-cross">✚</div>
+                <span class="art-dot dot-a"></span>
+                <span class="art-dot dot-b"></span>
+                <span class="art-dot dot-c"></span>
+              </div>
+              <div class="empty-label">AWAITING INPUT</div>
+              <h3>Your analysis starts here</h3>
+              <p>Choose symptoms on the left and run the inference engine to inspect matching rules and reasoning steps.</p>
+              <div class="empty-steps">
+                <div><span>01</span> Select facts</div>
+                <span class="step-arrow">→</span>
+                <div><span>02</span> Evaluate rules</div>
+                <span class="step-arrow">→</span>
+                <div><span>03</span> View reasoning</div>
+              </div>
+            </div>
+
+            <div id="results" hidden></div>
+          </div>
+        </section>
+
+        <section class="panel methods-panel" id="methodSection">
+          <div class="methods-heading">
+            <div><div class="panel-kicker">THE REASONING LAYER</div><h2>Two ways to think</h2></div>
+            <span class="method-count">01 — 02</span>
+          </div>
+          <div class="methods-grid">
+            <article class="method-card">
+              <div class="method-card-top"><span class="method-number">01</span><span class="method-tag">DATA-DRIVEN</span></div>
+              <div class="method-card-icon cyan-bg">↗</div>
+              <h3>Forward chaining</h3>
+              <p>Starts with known symptoms, evaluates IF–THEN rules, and identifies patterns that meet the configured matching threshold.</p>
+              <div class="flow"><span>Facts</span><i>→</i><span>Rules</span><i>→</i><span>Patterns</span></div>
+            </article>
+            <article class="method-card">
+              <div class="method-card-top"><span class="method-number">02</span><span class="method-tag">GOAL-DRIVEN</span></div>
+              <div class="method-card-icon violet-bg">↙</div>
+              <h3>Backward chaining</h3>
+              <p>Starts with a selected hypothesis, checks its rule conditions, and reports which required facts are present or missing.</p>
+              <div class="flow violet-flow"><span>Goal</span><i>→</i><span>Rule</span><i>→</i><span>Facts</span></div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-brand"><span class="footer-mark">✚</span> MedExpert AI</div>
+          <span>AI Mini Project · Rule-Based Expert System</span>
+          <span class="footer-status"><span></span> LOCAL DEMO</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
